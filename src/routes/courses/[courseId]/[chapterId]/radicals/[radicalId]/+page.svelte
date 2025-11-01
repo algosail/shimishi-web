@@ -22,7 +22,7 @@
   )
 
   const onedit = () => {
-    goto(`/courses/${params.courseId}/radicals/${params.radicalId}/edit`)
+    goto(`/courses/${params.courseId}/${params.chapterId}/radicals/${params.radicalId}/edit`)
   }
 </script>
 

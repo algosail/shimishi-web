@@ -81,8 +81,8 @@
 
   h1 {
     margin: 0;
-    padding: var(--size-md);
-    font-size: var(--font-size-title);
+    padding: var(--md) var(--sm);
+    font-size: var(--fst);
   }
 
   p {
@@ -95,34 +95,17 @@
     align-items: flex-start;
     flex-grow: 2;
     background: var(--gv-ka);
+    padding: var(--md);
   }
 
   .block {
     display: flex;
     flex-direction: column;
-    gap: var(--size-sm);
+    align-items: flex-start;
+    gap: var(--md);
     width: 100%;
     max-width: 480px;
-    padding: 0 var(--size-md) var(--size-lg);
+    padding: var(--md);
     background: var(--cw);
-  }
-
-  textarea {
-    padding: 0 var(--size-xs);
-    font-family: inherit;
-    font-size: var(--font-size-base);
-    background: transparent;
-    border: none;
-    border-left: 1px solid var(--cg);
-    outline: none;
-    resize: none;
-  }
-
-  input {
-    padding: var(--size-xs) 0;
-    font-family: inherit;
-    font-size: var(--font-size-base);
-    border: none;
-    border-bottom: 1px solid var(--cg);
   }
 </style>

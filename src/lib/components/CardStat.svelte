@@ -31,7 +31,7 @@
   }
 
   .label {
-    font-size: var(--fss);
+    font-size: var(--fsc);
     /*font-family: 'DepartureMono';*/
     text-transform: uppercase;
   }

@@ -5,6 +5,7 @@
     "npm:@sveltejs/kit@^2.43.2": "2.48.4_@sveltejs+vite-plugin-svelte@6.2.1__svelte@5.43.2___acorn@8.15.0__vite@7.1.12___picomatch@4.0.3_svelte@5.43.2__acorn@8.15.0_vite@7.1.12__picomatch@4.0.3_acorn@8.15.0",
     "npm:@sveltejs/vite-plugin-svelte@^6.2.0": "6.2.1_svelte@5.43.2__acorn@8.15.0_vite@7.1.12__picomatch@4.0.3",
     "npm:jazz-tools@~0.18.32": "0.18.33_svelte@5.43.2__acorn@8.15.0",
+    "npm:marked@^16.4.1": "16.4.1",
     "npm:svelte-check@^4.3.2": "4.3.3_svelte@5.43.2__acorn@8.15.0_typescript@5.9.3",
     "npm:svelte@^5.39.5": "5.43.2_acorn@8.15.0",
     "npm:typescript@^5.9.2": "5.9.3",
@@ -730,6 +731,10 @@
       ],
       "bin": true
     },
+    "marked@16.4.1": {
+      "integrity": "sha512-ntROs7RaN3EvWfy3EZi14H4YxmT6A5YvywfhO+0pm+cH/dnSQRmdAmoFIc3B9aiwTehyk7pESH4ofyBY+V5hZg==",
+      "bin": true
+    },
     "mdurl@2.0.0": {
       "integrity": "sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w=="
     },
@@ -1091,6 +1096,7 @@
         "npm:@sveltejs/kit@^2.43.2",
         "npm:@sveltejs/vite-plugin-svelte@^6.2.0",
         "npm:jazz-tools@~0.18.32",
+        "npm:marked@^16.4.1",
         "npm:svelte-check@^4.3.2",
         "npm:svelte@^5.39.5",
         "npm:typescript@^5.9.2",

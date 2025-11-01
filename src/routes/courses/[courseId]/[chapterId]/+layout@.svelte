@@ -1,36 +1,34 @@
 <script lang="ts">
   import { page } from '$app/state'
   import { CoState } from 'jazz-tools/svelte'
-  import { Course } from '$lib/schema'
+  import { Course, Chapter } from '$lib/schema'
   import type { LayoutProps } from './$types'
 
   let { params, children }: LayoutProps = $props()
 
   const course = new CoState(Course, params.courseId)
 
-  const captersUrl = `/courses/${params.courseId}/chapters`
-  const radicalsUrl = `/courses/${params.courseId}/radicals`
-  const kanjiUrl = `/courses/${params.courseId}/kanji`
-  const vocabularyUrl = `/courses/${params.courseId}/vocabulary`
-  const grammarUrl = `/courses/${params.courseId}/grammar`
-  const sentencesUrl = `/courses/${params.courseId}/sentences`
-  const lessonsUrl = `/courses/${params.courseId}/lessons`
+  const chapter = new CoState(Chapter, params.chapterId)
+
+  const radicalsUrl = `/courses/${params.courseId}/${params.chapterId}/radicals`
+  const kanjiUrl = `/courses/${params.courseId}/${params.chapterId}/kanji`
+  const vocabularyUrl = `/courses/${params.courseId}/${params.chapterId}/vocabulary`
+  const grammarUrl = `/courses/${params.courseId}/${params.chapterId}/grammar`
+  const lessonsUrl = `/courses/${params.courseId}/${params.chapterId}/lessons`
 
   const isCurrent = (url: string) => page.url.pathname === url
 </script>
 
 <main>
   <div>
-    <h1>{course.current?.name}</h1>
-    <p>{course.current?.description}</p>
+    <h1>Глава {chapter.current?.index}</h1>
+    <p><a href={`/courses/${params.courseId}/`}>{course.current?.name}</a></p>
   </div>
   <nav>
-    <a href={captersUrl} class:current={isCurrent(captersUrl)}>Главы</a>
     <a href={radicalsUrl} class:current={isCurrent(radicalsUrl)}>Радикалы</a>
     <a href={kanjiUrl} class:current={isCurrent(kanjiUrl)}>Кандзи</a>
     <a href={vocabularyUrl} class:current={isCurrent(vocabularyUrl)}>Слова</a>
     <a href={grammarUrl} class:current={isCurrent(grammarUrl)}>Правила</a>
-    <a href={sentencesUrl} class:current={isCurrent(sentencesUrl)}>Примеры</a>
     <a href={lessonsUrl} class:isCurrent(lessonsUrl)>Уроки</a>
   </nav>
   {@render children()}

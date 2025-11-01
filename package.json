@@ -21,6 +21,7 @@
     "vite": "^7.1.7"
   },
   "dependencies": {
-    "jazz-tools": "^0.18.32"
+    "jazz-tools": "^0.18.32",
+    "marked": "^16.4.1"
   }
 }

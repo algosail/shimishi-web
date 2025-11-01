@@ -25,38 +25,14 @@
 
   let prev = $derived(course.current?.radicals.slice(0, index))
   let next = $derived(course.current?.radicals.slice(index + 1))
-
-  const onadd = () => {
-    goto(`/courses/${params.courseId}/radicals/add`)
-  }
-
-  const onkeydown = (
-    e: KeyboardEvent & {
-      currentTarget: EventTarget & Window
-    },
-  ) => {
-    if (e.key === 'Enter') {
-      goto(`/courses/${params.courseId}/radicals/${params.radicalId}/edit`)
-    }
-
-    if (e.key === 'ArrowLeft') {
-      if (prev?.[index - 1]) {
-        goto(`/courses/${params.courseId}/radicals/${prev?.[index - 1]!.$jazz.id}`)
-      } else {
-        goto(`/courses/${params.courseId}/radicals/add`)
-      }
-    }
-
-    if (e.key === 'ArrowRight' && next?.[0]) {
-      goto(`/courses/${params.courseId}/radicals/${next?.[0].$jazz.id}`)
-    }
-  }
 </script>
 
-<svelte:window {onkeydown} />
-
 <CardList --gradient="var(--gv-z)">
-  <ListCard key="add-button" onclick={onadd} type="Радикал">
+  <ListCard
+    key="add-button"
+    href={`/courses/${params.courseId}/${params.chapterId}/radicals/add`}
+    type="Радикал"
+  >
     <CardTitle title="Добавить" />
     <CardDesc desc="Новый Радикал для кандзи" />
   </ListCard>
@@ -64,7 +40,7 @@
     {#if radical}
       <ListCard
         key={radical.$jazz.id}
-        href={`/courses/${params.courseId}/radicals/${radical.$jazz.id}`}
+        href={`/courses/${params.courseId}/${params.chapterId}/radicals/${radical.$jazz.id}`}
         type="Радикал"
       >
         <CardTitle title={radical.character} />
@@ -77,7 +53,7 @@
     {#if radical}
       <ListCard
         key={radical.$jazz.id}
-        href={`/courses/${params.courseId}/radicals/${radical.$jazz.id}`}
+        href={`/courses/${params.courseId}/${params.chapterId}/radicals/${radical.$jazz.id}`}
         type="Радикал"
       >
         <CardTitle title={radical.character} />

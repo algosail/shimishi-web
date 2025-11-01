@@ -13,7 +13,7 @@
     <a href="/" class:current={page.url.pathname === '/'}>Прогресс</a>
     <a href="/courses" class:current={page.url.pathname === '/courses'}>Курсы</a>
   </nav>
-  <span class="noto-sans-400 profile">{me.current?.profile?.name}</span>
+  <a href="/profile" class="noto-sans-400 profile">{me.current?.profile?.name}</a>
 </header>
 
 <style>

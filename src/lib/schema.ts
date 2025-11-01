@@ -12,30 +12,37 @@ export const Kanji = co.map({
   character: z.string(),
   radicals: co.list(Radical),
   meaning: z.string(),
-  meaningAlternatives: z.optional(z.array(z.string())),
+  meaningAlternatives: z.array(z.string()),
   meaningMnemonic: z.string(),
-  onyomi: z.optional(z.array(z.string())),
-  kunyomi: z.optional(z.array(z.string())),
-  nanori: z.optional(z.array(z.string())),
+  onyomi: z.array(z.string()),
+  kunyomi: z.array(z.string()),
+  nanori: z.array(z.string()),
   readingMnemonic: z.string(),
-})
-
-export const Pattern = co.map({
-  expression: z.string(),
-  combinations: co.list(z.string()),
 })
 
 export const Word = co.map({
   japanese: z.string(),
   kanji: co.list(Kanji),
-  partOfSpeech: z.optional(z.array(z.string())),
+  partOfSpeech: z.array(z.string()),
   meaning: z.string(),
-  meaningAlternatives: z.optional(z.array(z.string())),
+  meaningAlternatives: z.array(z.string()),
   meaningMnemonic: z.string(),
   reading: z.string(),
   readingMnemonic: z.string(),
   audio: co.optional(co.fileStream()),
-  context: co.list(Pattern),
+  context: z.array(
+    z.object({
+      expression: z.string(),
+      combinations: z.array(z.string()),
+    }),
+  ),
+})
+
+export const Sentence = co.map({
+  japanese: z.string(),
+  meaning: z.string(),
+  audio: co.optional(co.fileStream()),
+  grammarMap: z.string(),
 })
 
 export const Grammar = co.map({
@@ -44,16 +51,7 @@ export const Grammar = co.map({
   explanation: z.string(),
   prompt: z.string(),
   fakeHelpers: z.array(z.string()),
-})
-
-export const Sentence = co.map({
-  japanese: z.string(),
-  meaning: z.string(),
-  audio: co.optional(co.fileStream()),
-  kanji: co.list(Kanji),
-  vocabulary: co.list(Word),
-  grammars: co.list(Grammar),
-  grammarMap: z.optional(z.string()),
+  examples: co.list(Sentence),
 })
 
 export const Lesson = co.map({
@@ -82,7 +80,6 @@ export const Course = co.map({
   kanji: co.list(Kanji),
   vocabulary: co.list(Word),
   grammar: co.list(Grammar),
-  sentences: co.list(Sentence),
   lessons: co.list(Lesson),
 })
 

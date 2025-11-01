@@ -3,7 +3,7 @@
 
   import { co, FileStream } from 'jazz-tools'
   import { CoState } from 'jazz-tools/svelte'
-  import { Course, Radical } from '$lib/schema'
+  import { Course, Chapter, Radical } from '$lib/schema'
   import type { PageProps } from './$types'
   import CardList from '$lib/components/CardList.svelte'
   import ListCard from '$lib/components/ListCard.svelte'
@@ -19,8 +19,10 @@
     resolve: { radicals: true },
   })
 
+  const chapter = new CoState(Chapter, params.chapterId)
+
   const onclose = () => {
-    goto(`/courses/${params.courseId}/radicals`)
+    goto(`/courses/${params.courseId}/${params.chapterId}/radicals`)
   }
 
   const onsave = async (values: RadicalValue) => {
@@ -38,9 +40,10 @@
     }
 
     const radical = Radical.create({ ...values, image }, { owner })
-    const res = course.current.radicals.$jazz.push(radical)
+    chapter.current?.radicals?.$jazz.push(radical)
+    course.current.radicals.$jazz.push(radical)
 
-    onclose()
+    goto(`/courses/${params.courseId}/${params.chapterId}/radicals/${radical.$jazz.id}`)
   }
 </script>
 

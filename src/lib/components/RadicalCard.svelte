@@ -12,6 +12,7 @@
 
 <script lang="ts">
   import { blur } from 'svelte/transition'
+  import { marked } from 'marked'
 
   import Image from './Image.svelte'
   import CardTitle from './CardTitle.svelte'
@@ -35,34 +36,32 @@
   })
 </script>
 
-{#key data.character}
-  <div in:blur bind:this={el} class="container">
-    <div class="wrapper">
-      <div class="meta">
-        <span class="type">Радикал</span>
-        <CardTitle title={data.character} />
-        <CardDesc desc={data.name} />
-        {#if data.nameAlternatives?.length}
-          <CardDesc desc={data.nameAlternatives.join(', ')} />
-        {/if}
-      </div>
-      <div class="image">
-        <Image file={data.image} alt={`${data.name} Визуальная мнемоника`} />
-      </div>
-    </div>
-    <div class="mnemonic">
-      <span class="type">Мнемоника</span>
-      <p>
-        {data.mnemonic}
-      </p>
-    </div>
-    <div class="actions">
-      {#if onedit}
-        <button onclick={onedit}>Изменить</button>
+<div in:blur bind:this={el} class="container">
+  <div class="wrapper">
+    <div class="meta">
+      <span class="type">Радикал</span>
+      <CardTitle title={data.character} />
+      <CardDesc desc={data.name} />
+      {#if data.nameAlternatives?.length}
+        <CardDesc desc={data.nameAlternatives.join(', ')} />
       {/if}
     </div>
+    <div class="image">
+      <Image file={data.image} alt={`${data.name} Визуальная мнемоника`} />
+    </div>
   </div>
-{/key}
+  <div class="mnemonic">
+    <span class="type">Мнемоника</span>
+    <p>
+      {@html marked(data.mnemonic)}
+    </p>
+  </div>
+  <div class="actions">
+    {#if onedit}
+      <button onclick={onedit}>Изменить</button>
+    {/if}
+  </div>
+</div>
 
 <style>
   .container {

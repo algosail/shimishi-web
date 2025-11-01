@@ -25,7 +25,7 @@
   )
 
   const onclose = () => {
-    goto(`/courses/${params.courseId}/radicals/${params.radicalId}`)
+    goto(`/courses/${params.courseId}/${params.chapterId}/radicals/${params.radicalId}`)
   }
 
   let onsave = async (values: RadicalValue) => {
