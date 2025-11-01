@@ -1,0 +1,653 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'DepartureMono';
+  src: url('/DepartureMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.noto-sans-jp-400 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-sans-400 {
+  font-family: 'Noto Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}
+
+.noto-emoji-400 {
+  font-family: 'Noto Emoji', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.departure {
+  font-family: 'DepartureMono', monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --fsc: 12px;
+  --fss: 14px;
+  --fsb: 16px;
+  --fsk: 20px;
+  --fsm: 24px;
+  --fsl: 32px;
+  --fst: 48px;
+
+  --xxs: 4px;
+  --xs: 8px;
+  --sm: 12px;
+  --md: 16px;
+  --lg: 24px;
+  --xl: 32px;
+  --xxl: 48px;
+
+  --cw: #ffffff;
+  --cb: #454545;
+  --cg: #d8d8d8;
+
+  --gv-a: linear-gradient(to bottom, #2b2b2b 43%, #4c4c4c 59%, #f3f3f2);
+  --gv-b: linear-gradient(to bottom, #2b2b2b, #949495 49%, #f3f3f2);
+  --gv-c: linear-gradient(to bottom, #433d3c 21%, #6a6564 39%, #f3f3f2 71%);
+  --gv-d: linear-gradient(to bottom, #797979, #dcdddd 55%);
+  --gv-e: linear-gradient(to bottom, #dcdddd, #f8fbf8 55%);
+  --gv-f: linear-gradient(to bottom, #250d00 15%, #f7fcfe 100%);
+  --gv-g: linear-gradient(to bottom, #544a47, #b3ada0 25%, #d4dcda 50%, #dddcd6 85%, #dddcd6 100%);
+  --gv-h: linear-gradient(to bottom, #281a14 8%, #f3f3f2 100%);
+  --gv-i: linear-gradient(to bottom, #888084, #dddcd6 46%);
+  --gv-j: linear-gradient(to bottom, #eae5e3, #dcdddd 100%);
+  --gv-k: linear-gradient(to bottom, #16160e 34%, #6c848d 100%);
+  --gv-l: linear-gradient(to bottom, #2b2b2b, #3a3951 48%, #6c848d 100%);
+  --gv-ll: linear-gradient(to bottom, #180614, #000b00 1%, #474a4d 28%, #bed3ca 100%);
+  --gv-m: linear-gradient(to bottom, #47585c, #d4dcda 100%);
+  --gv-n: linear-gradient(to bottom, #9ea1a3, #d4dcda 100%);
+  --gv-nn: linear-gradient(to bottom, #180614 18%, #a6a5c4 76%);
+  --gv-o: linear-gradient(to bottom, #a6a5c4 9%, #e4d2d8 100%);
+  --gv-p: linear-gradient(to bottom, #a7c6e3 1%, #dbdff3 48%, #e7bfc8 87%, #b9c2e4 100%);
+  --gv-q: linear-gradient(to bottom, #888084, #e9dfe5 100%);
+  --gv-r: linear-gradient(to bottom, #c0c6c9, #e9dfe5 100%);
+  --gv-s: linear-gradient(
+    to bottom,
+    #180614 27%,
+    #2b2137 43%,
+    #4f455c 53%,
+    #c099a0 67%,
+    #e4d2d8 83%,
+    #f4f4f4 100%
+  );
+  --gv-t: linear-gradient(to bottom, #180614 18%, #e9dfe5 76%);
+  --gv-u: linear-gradient(to bottom, #180614, #e4d2d8 48%, #a6a5c4 100%);
+  --gv-v: linear-gradient(to bottom, #180614, #e4d2d8 55%);
+  --gv-w: linear-gradient(
+    to bottom,
+    #2b2b2b,
+    #474a4d 5%,
+    #95949a 29%,
+    #dddcd6 41%,
+    #d4dcda 59%,
+    #d4dcda 100%
+  );
+  --gv-x: linear-gradient(to bottom, #2e2930 42%, #4d80e6 100%);
+  --gv-y: linear-gradient(to bottom, #2e2930 13%, #c099a0 57%, #4d80e6 100%);
+  --gv-z: linear-gradient(to bottom, #44617b, #a6a5c4 100%);
+  --gv-ja: linear-gradient(to bottom, #4d80e6, #e9dfe5 100%);
+  --gv-ji: linear-gradient(to bottom, #9790a4, #d4dcda 55%);
+  --gv-ju: linear-gradient(
+    to bottom,
+    #010101 27%,
+    #21273d 43%,
+    #495682 59%,
+    #8a9390 67%,
+    #bbb7b1 75%,
+    #fbfaf5 100%
+  );
+  --gv-je: linear-gradient(to bottom, #010101, #21273d 19%, #5b7e91 42%, #fbfaf5 100%);
+  --gv-jo: linear-gradient(
+    to bottom,
+    #2b2b2b 27%,
+    #47585c 43%,
+    #80989b 53%,
+    #bed2c3 67%,
+    #bed3ca 83%,
+    #e6eae3 100%
+  );
+  --gv-ka: linear-gradient(to bottom, #47585c, #c8d5bb 74%);
+  --gv-ki: linear-gradient(to bottom, #d3dbd9, #9b94a7 100%);
+  --gv-ku: linear-gradient(to bottom, #180614 18%, #bed2c3 48%, #a6a5c4 76%);
+  --gv-ke: linear-gradient(
+    to bottom,
+    #16160e 31%,
+    #2c4044 49%,
+    #6c848d 59%,
+    #d4b177 67%,
+    #f5e697 78%,
+    #6c848d 100%
+  );
+  --gv-ko: linear-gradient(
+    to bottom,
+    #000d19 27%,
+    #152f49 43%,
+    #5f697c 59%,
+    #ad817d 67%,
+    #d6a68e 75%,
+    #ab9491 100%
+  );
+  --gv-sa: linear-gradient(
+    to bottom,
+    #010101 27%,
+    #21273d 43%,
+    #da2c2c 59%,
+    #8a9390 67%,
+    #bbb7b1 75%,
+    #fbfaf5 100%
+  );
+  --gv-shi: linear-gradient(
+    to bottom,
+    #44617b,
+    #6a8297 29%,
+    #f7fcfe 51%,
+    #dddcd6 61%,
+    #80989b 100%
+  );
+  --gv-tsu: linear-gradient(
+    to bottom,
+    #e36639,
+    #e56739 14%,
+    #010101 56%,
+    #bbb7b1 84%,
+    #fbfaf5 100%
+  );
+  --gv-te: linear-gradient(
+    to bottom,
+    #000b00 21%,
+    #555555 44%,
+    #8f8f79 55%,
+    #f5e697 66%,
+    #d3d3d0 78%,
+    #bfbfbf 99%,
+    #f0f0f0 100%
+  );
+  --gv-to: linear-gradient(to bottom, #797979, #dcdddd 42%, #ffe56b 58%, #dcdddd 63%, #dcdddd 100%);
+  --gv-ha: linear-gradient(to bottom, #dcdddd, #dcdddd 12%, #ffe56b 47%, #dcdddd 78%, #797979 100%);
+  --gv-hi: linear-gradient(
+    to bottom,
+    #4587b3,
+    #ed7176 12%,
+    #9ea3b5 26%,
+    #d4b1ad 34%,
+    #70a8a0 48%,
+    #0f678d 1000%
+  );
+
+  --gh-a: linear-gradient(to right, #2b2b2b 43%, #4c4c4c 59%, #f3f3f2);
+  --gh-b: linear-gradient(to right, #2b2b2b, #949495 49%, #f3f3f2);
+  --gh-c: linear-gradient(to right, #433d3c 21%, #6a6564 39%, #f3f3f2 71%);
+  --gh-d: linear-gradient(to right, #797979, #dcdddd 55%);
+  --gh-e: linear-gradient(to right, #dcdddd, #f8fbf8 55%);
+  --gh-f: linear-gradient(to right, #250d00 15%, #f7fcfe 100%);
+  --gh-g: linear-gradient(to right, #544a47, #b3ada0 25%, #d4dcda 50%, #dddcd6 85%, #dddcd6 100%);
+  --gh-h: linear-gradient(to right, #281a14 8%, #f3f3f2 100%);
+  --gh-i: linear-gradient(to right, #888084, #dddcd6 46%);
+  --gh-j: linear-gradient(to right, #eae5e3, #dcdddd 100%);
+  --gh-k: linear-gradient(to right, #16160e 34%, #6c848d 100%);
+  --gh-l: linear-gradient(to right, #2b2b2b, #3a3951 48%, #6c848d 100%);
+  --gh-ll: linear-gradient(to right, #180614, #000b00 1%, #474a4d 28%, #bed3ca 100%);
+  --gh-m: linear-gradient(to right, #47585c, #d4dcda 100%);
+  --gh-n: linear-gradient(to right, #9ea1a3, #d4dcda 100%);
+  --gh-nn: linear-gradient(to right, #180614 18%, #a6a5c4 76%);
+  --gh-o: linear-gradient(to right, #a6a5c4 9%, #e4d2d8 100%);
+  --gh-p: linear-gradient(to right, #a7c6e3 1%, #dbdff3 48%, #e7bfc8 87%, #b9c2e4 100%);
+  --gh-q: linear-gradient(to right, #888084, #e9dfe5 100%);
+  --gh-r: linear-gradient(to right, #c0c6c9, #e9dfe5 100%);
+  --gh-s: linear-gradient(
+    to right,
+    #180614 27%,
+    #2b2137 43%,
+    #4f455c 53%,
+    #c099a0 67%,
+    #e4d2d8 83%,
+    #f4f4f4 100%
+  );
+  --gh-t: linear-gradient(to right, #180614 18%, #e9dfe5 76%);
+  --gh-u: linear-gradient(to right, #180614, #e4d2d8 48%, #a6a5c4 100%);
+  --gh-v: linear-gradient(to right, #180614, #e4d2d8 55%);
+  --gh-w: linear-gradient(
+    to right,
+    #2b2b2b,
+    #474a4d 5%,
+    #95949a 29%,
+    #dddcd6 41%,
+    #d4dcda 59%,
+    #d4dcda 100%
+  );
+  --gh-x: linear-gradient(to right, #2e2930 42%, #4d80e6 100%);
+  --gh-y: linear-gradient(to right, #2e2930 13%, #c099a0 57%, #4d80e6 100%);
+  --gh-z: linear-gradient(to right, #44617b, #a6a5c4 100%);
+  --gh-ja: linear-gradient(to right, #4d80e6, #e9dfe5 100%);
+  --gh-ji: linear-gradient(to right, #9790a4, #d4dcda 55%);
+  --gh-ju: linear-gradient(
+    to right,
+    #010101 27%,
+    #21273d 43%,
+    #495682 59%,
+    #8a9390 67%,
+    #bbb7b1 75%,
+    #fbfaf5 100%
+  );
+  --gh-je: linear-gradient(to right, #010101, #21273d 19%, #5b7e91 42%, #fbfaf5 100%);
+  --gh-jo: linear-gradient(
+    to right,
+    #2b2b2b 27%,
+    #47585c 43%,
+    #80989b 53%,
+    #bed2c3 67%,
+    #bed3ca 83%,
+    #e6eae3 100%
+  );
+  --gh-ka: linear-gradient(to right, #47585c, #c8d5bb 74%);
+  --gh-ki: linear-gradient(to right, #d3dbd9, #9b94a7 100%);
+  --gh-ku: linear-gradient(to right, #180614 18%, #bed2c3 48%, #a6a5c4 76%);
+  --gh-ke: linear-gradient(
+    to right,
+    #16160e 31%,
+    #2c4044 49%,
+    #6c848d 59%,
+    #d4b177 67%,
+    #f5e697 78%,
+    #6c848d 100%
+  );
+  --gh-ko: linear-gradient(
+    to right,
+    #000d19 27%,
+    #152f49 43%,
+    #5f697c 59%,
+    #ad817d 67%,
+    #d6a68e 75%,
+    #ab9491 100%
+  );
+  --gh-sa: linear-gradient(
+    to right,
+    #010101 27%,
+    #21273d 43%,
+    #da2c2c 59%,
+    #8a9390 67%,
+    #bbb7b1 75%,
+    #fbfaf5 100%
+  );
+  --gh-shi: linear-gradient(to right, #44617b, #6a8297 29%, #f7fcfe 51%, #dddcd6 61%, #80989b 100%);
+  --gh-tsu: linear-gradient(to right, #e36639, #e56739 14%, #010101 56%, #bbb7b1 84%, #fbfaf5 100%);
+  --gh-te: linear-gradient(
+    to right,
+    #000b00 21%,
+    #555555 44%,
+    #8f8f79 55%,
+    #f5e697 66%,
+    #d3d3d0 78%,
+    #bfbfbf 99%,
+    #f0f0f0 100%
+  );
+  --gh-to: linear-gradient(to right, #797979, #dcdddd 42%, #ffe56b 58%, #dcdddd 63%, #dcdddd 100%);
+  --gh-ha: linear-gradient(to right, #dcdddd, #dcdddd 12%, #ffe56b 47%, #dcdddd 78%, #797979 100%);
+  --gh-hi: linear-gradient(
+    to right,
+    #4587b3,
+    #ed7176 12%,
+    #9ea3b5 26%,
+    #d4b1ad 34%,
+    #70a8a0 48%,
+    #0f678d 1000%
+  );
+
+  --gvr-a: linear-gradient(to top, #2b2b2b 43%, #4c4c4c 59%, #f3f3f2);
+  --gvr-b: linear-gradient(to top, #2b2b2b, #949495 49%, #f3f3f2);
+  --gvr-c: linear-gradient(to top, #433d3c 21%, #6a6564 39%, #f3f3f2 71%);
+  --gvr-d: linear-gradient(to top, #797979, #dcdddd 55%);
+  --gvr-e: linear-gradient(to top, #dcdddd, #f8fbf8 55%);
+  --gvr-f: linear-gradient(to top, #250d00 15%, #f7fcfe 100%);
+  --gvr-g: linear-gradient(to top, #544a47, #b3ada0 25%, #d4dcda 50%, #dddcd6 85%, #dddcd6 100%);
+  --gvr-h: linear-gradient(to top, #281a14 8%, #f3f3f2 100%);
+  --gvr-i: linear-gradient(to top, #888084, #dddcd6 46%);
+  --gvr-j: linear-gradient(to top, #eae5e3, #dcdddd 100%);
+  --gvr-k: linear-gradient(to top, #16160e 34%, #6c848d 100%);
+  --gvr-l: linear-gradient(to top, #2b2b2b, #3a3951 48%, #6c848d 100%);
+  --gvr-ll: linear-gradient(to top, #180614, #000b00 1%, #474a4d 28%, #bed3ca 100%);
+  --gvr-m: linear-gradient(to top, #47585c, #d4dcda 100%);
+  --gvr-n: linear-gradient(to top, #9ea1a3, #d4dcda 100%);
+  --gvr-nn: linear-gradient(to top, #180614 18%, #a6a5c4 76%);
+  --gvr-o: linear-gradient(to top, #a6a5c4 9%, #e4d2d8 100%);
+  --gvr-p: linear-gradient(to top, #a7c6e3 1%, #dbdff3 48%, #e7bfc8 87%, #b9c2e4 100%);
+  --gvr-q: linear-gradient(to top, #888084, #e9dfe5 100%);
+  --gvr-r: linear-gradient(to top, #c0c6c9, #e9dfe5 100%);
+  --gvr-s: linear-gradient(
+    to top,
+    #180614 27%,
+    #2b2137 43%,
+    #4f455c 53%,
+    #c099a0 67%,
+    #e4d2d8 83%,
+    #f4f4f4 100%
+  );
+  --gvr-t: linear-gradient(to top, #180614 18%, #e9dfe5 76%);
+  --gvr-u: linear-gradient(to top, #180614, #e4d2d8 48%, #a6a5c4 100%);
+  --gvr-v: linear-gradient(to top, #180614, #e4d2d8 55%);
+  --gvr-w: linear-gradient(
+    to top,
+    #2b2b2b,
+    #474a4d 5%,
+    #95949a 29%,
+    #dddcd6 41%,
+    #d4dcda 59%,
+    #d4dcda 100%
+  );
+  --gvr-x: linear-gradient(to top, #2e2930 42%, #4d80e6 100%);
+  --gvr-y: linear-gradient(to top, #2e2930 13%, #c099a0 57%, #4d80e6 100%);
+  --gvr-z: linear-gradient(to top, #44617b, #a6a5c4 100%);
+  --gvr-ja: linear-gradient(to top, #4d80e6, #e9dfe5 100%);
+  --gvr-ji: linear-gradient(to top, #9790a4, #d4dcda 55%);
+  --gvr-ju: linear-gradient(
+    to top,
+    #010101 27%,
+    #21273d 43%,
+    #495682 59%,
+    #8a9390 67%,
+    #bbb7b1 75%,
+    #fbfaf5 100%
+  );
+  --gvr-je: linear-gradient(to top, #010101, #21273d 19%, #5b7e91 42%, #fbfaf5 100%);
+  --gvr-jo: linear-gradient(
+    to top,
+    #2b2b2b 27%,
+    #47585c 43%,
+    #80989b 53%,
+    #bed2c3 67%,
+    #bed3ca 83%,
+    #e6eae3 100%
+  );
+  --gvr-ka: linear-gradient(to top, #47585c, #c8d5bb 74%);
+  --gvr-ki: linear-gradient(to top, #d3dbd9, #9b94a7 100%);
+  --gvr-ku: linear-gradient(to top, #180614 18%, #bed2c3 48%, #a6a5c4 76%);
+  --gvr-ke: linear-gradient(
+    to top,
+    #16160e 31%,
+    #2c4044 49%,
+    #6c848d 59%,
+    #d4b177 67%,
+    #f5e697 78%,
+    #6c848d 100%
+  );
+  --gvr-ko: linear-gradient(
+    to top,
+    #000d19 27%,
+    #152f49 43%,
+    #5f697c 59%,
+    #ad817d 67%,
+    #d6a68e 75%,
+    #ab9491 100%
+  );
+  --gvr-sa: linear-gradient(
+    to top,
+    #010101 27%,
+    #21273d 43%,
+    #da2c2c 59%,
+    #8a9390 67%,
+    #bbb7b1 75%,
+    #fbfaf5 100%
+  );
+  --gvr-shi: linear-gradient(to top, #44617b, #6a8297 29%, #f7fcfe 51%, #dddcd6 61%, #80989b 100%);
+  --gvr-tsu: linear-gradient(to top, #e36639, #e56739 14%, #010101 56%, #bbb7b1 84%, #fbfaf5 100%);
+  --gvr-te: linear-gradient(
+    to top,
+    #000b00 21%,
+    #555555 44%,
+    #8f8f79 55%,
+    #f5e697 66%,
+    #d3d3d0 78%,
+    #bfbfbf 99%,
+    #f0f0f0 100%
+  );
+  --gvr-to: linear-gradient(to top, #797979, #dcdddd 42%, #ffe56b 58%, #dcdddd 63%, #dcdddd 100%);
+  --gvr-ha: linear-gradient(to top, #dcdddd, #dcdddd 12%, #ffe56b 47%, #dcdddd 78%, #797979 100%);
+  --gvr-hi: linear-gradient(
+    to top,
+    #4587b3,
+    #ed7176 12%,
+    #9ea3b5 26%,
+    #d4b1ad 34%,
+    #70a8a0 48%,
+    #0f678d 1000%
+  );
+
+  --ghr-a: linear-gradient(to left, #2b2b2b 43%, #4c4c4c 59%, #f3f3f2);
+  --ghr-b: linear-gradient(to left, #2b2b2b, #949495 49%, #f3f3f2);
+  --ghr-c: linear-gradient(to left, #433d3c 21%, #6a6564 39%, #f3f3f2 71%);
+  --ghr-d: linear-gradient(to left, #797979, #dcdddd 55%);
+  --ghr-e: linear-gradient(to left, #dcdddd, #f8fbf8 55%);
+  --ghr-f: linear-gradient(to left, #250d00 15%, #f7fcfe 100%);
+  --ghr-g: linear-gradient(to left, #544a47, #b3ada0 25%, #d4dcda 50%, #dddcd6 85%, #dddcd6 100%);
+  --ghr-h: linear-gradient(to left, #281a14 8%, #f3f3f2 100%);
+  --ghr-i: linear-gradient(to left, #888084, #dddcd6 46%);
+  --ghr-j: linear-gradient(to left, #eae5e3, #dcdddd 100%);
+  --ghr-k: linear-gradient(to left, #16160e 34%, #6c848d 100%);
+  --ghr-l: linear-gradient(to left, #2b2b2b, #3a3951 48%, #6c848d 100%);
+  --ghr-ll: linear-gradient(to left, #180614, #000b00 1%, #474a4d 28%, #bed3ca 100%);
+  --ghr-m: linear-gradient(to left, #47585c, #d4dcda 100%);
+  --ghr-n: linear-gradient(to left, #9ea1a3, #d4dcda 100%);
+  --ghr-nn: linear-gradient(to left, #180614 18%, #a6a5c4 76%);
+  --ghr-o: linear-gradient(to left, #a6a5c4 9%, #e4d2d8 100%);
+  --ghr-p: linear-gradient(to left, #a7c6e3 1%, #dbdff3 48%, #e7bfc8 87%, #b9c2e4 100%);
+  --ghr-q: linear-gradient(to left, #888084, #e9dfe5 100%);
+  --ghr-r: linear-gradient(to left, #c0c6c9, #e9dfe5 100%);
+  --ghr-s: linear-gradient(
+    to left,
+    #180614 27%,
+    #2b2137 43%,
+    #4f455c 53%,
+    #c099a0 67%,
+    #e4d2d8 83%,
+    #f4f4f4 100%
+  );
+  --ghr-t: linear-gradient(to left, #180614 18%, #e9dfe5 76%);
+  --ghr-u: linear-gradient(to left, #180614, #e4d2d8 48%, #a6a5c4 100%);
+  --ghr-v: linear-gradient(to left, #180614, #e4d2d8 55%);
+  --ghr-w: linear-gradient(
+    to left,
+    #2b2b2b,
+    #474a4d 5%,
+    #95949a 29%,
+    #dddcd6 41%,
+    #d4dcda 59%,
+    #d4dcda 100%
+  );
+  --ghr-x: linear-gradient(to left, #2e2930 42%, #4d80e6 100%);
+  --ghr-y: linear-gradient(to left, #2e2930 13%, #c099a0 57%, #4d80e6 100%);
+  --ghr-z: linear-gradient(to left, #44617b, #a6a5c4 100%);
+  --ghr-ja: linear-gradient(to left, #4d80e6, #e9dfe5 100%);
+  --ghr-ji: linear-gradient(to left, #9790a4, #d4dcda 55%);
+  --ghr-ju: linear-gradient(
+    to left,
+    #010101 27%,
+    #21273d 43%,
+    #495682 59%,
+    #8a9390 67%,
+    #bbb7b1 75%,
+    #fbfaf5 100%
+  );
+  --ghr-je: linear-gradient(to left, #010101, #21273d 19%, #5b7e91 42%, #fbfaf5 100%);
+  --ghr-jo: linear-gradient(
+    to left,
+    #2b2b2b 27%,
+    #47585c 43%,
+    #80989b 53%,
+    #bed2c3 67%,
+    #bed3ca 83%,
+    #e6eae3 100%
+  );
+  --ghr-ka: linear-gradient(to left, #47585c, #c8d5bb 74%);
+  --ghr-ki: linear-gradient(to left, #d3dbd9, #9b94a7 100%);
+  --ghr-ku: linear-gradient(to left, #180614 18%, #bed2c3 48%, #a6a5c4 76%);
+  --ghr-ke: linear-gradient(
+    to left,
+    #16160e 31%,
+    #2c4044 49%,
+    #6c848d 59%,
+    #d4b177 67%,
+    #f5e697 78%,
+    #6c848d 100%
+  );
+  --ghr-ko: linear-gradient(
+    to left,
+    #000d19 27%,
+    #152f49 43%,
+    #5f697c 59%,
+    #ad817d 67%,
+    #d6a68e 75%,
+    #ab9491 100%
+  );
+  --ghr-sa: linear-gradient(
+    to left,
+    #010101 27%,
+    #21273d 43%,
+    #da2c2c 59%,
+    #8a9390 67%,
+    #bbb7b1 75%,
+    #fbfaf5 100%
+  );
+  --ghr-shi: linear-gradient(to left, #44617b, #6a8297 29%, #f7fcfe 51%, #dddcd6 61%, #80989b 100%);
+  --ghr-tsu: linear-gradient(to left, #e36639, #e56739 14%, #010101 56%, #bbb7b1 84%, #fbfaf5 100%);
+  --ghr-te: linear-gradient(
+    to left,
+    #000b00 21%,
+    #555555 44%,
+    #8f8f79 55%,
+    #f5e697 66%,
+    #d3d3d0 78%,
+    #bfbfbf 99%,
+    #f0f0f0 100%
+  );
+  --ghr-to: linear-gradient(to left, #797979, #dcdddd 42%, #ffe56b 58%, #dcdddd 63%, #dcdddd 100%);
+  --ghr-ha: linear-gradient(to left, #dcdddd, #dcdddd 12%, #ffe56b 47%, #dcdddd 78%, #797979 100%);
+  --ghr-hi: linear-gradient(
+    to left,
+    #4587b3,
+    #ed7176 12%,
+    #9ea3b5 26%,
+    #d4b1ad 34%,
+    #70a8a0 48%,
+    #0f678d 1000%
+  );
+
+  --gr-a: radial-gradient(#2b2b2b 43%, #4c4c4c 59%, #f3f3f2);
+  --gr-b: radial-gradient(#2b2b2b, #949495 49%, #f3f3f2);
+  --gr-c: radial-gradient(#433d3c 21%, #6a6564 39%, #f3f3f2 71%);
+  --gr-d: radial-gradient(#797979, #dcdddd 55%);
+  --gr-e: radial-gradient(#dcdddd, #f8fbf8 55%);
+  --gr-f: radial-gradient(#250d00 15%, #f7fcfe 100%);
+  --gr-g: radial-gradient(#544a47, #b3ada0 25%, #d4dcda 50%, #dddcd6 85%, #dddcd6 100%);
+  --gr-h: radial-gradient(#281a14 8%, #f3f3f2 100%);
+  --gr-i: radial-gradient(#888084, #dddcd6 46%);
+  --gr-j: radial-gradient(#eae5e3, #dcdddd 100%);
+  --gr-k: radial-gradient(#16160e 34%, #6c848d 100%);
+  --gr-l: radial-gradient(#2b2b2b, #3a3951 48%, #6c848d 100%);
+  --gr-ll: radial-gradient(#180614, #000b00 1%, #474a4d 28%, #bed3ca 100%);
+  --gr-m: radial-gradient(#47585c, #d4dcda 100%);
+  --gr-n: radial-gradient(#9ea1a3, #d4dcda 100%);
+  --gr-nn: radial-gradient(#180614 18%, #a6a5c4 76%);
+  --gr-o: radial-gradient(#a6a5c4 9%, #e4d2d8 100%);
+  --gr-p: radial-gradient(#a7c6e3 1%, #dbdff3 48%, #e7bfc8 87%, #b9c2e4 100%);
+  --gr-q: radial-gradient(#888084, #e9dfe5 100%);
+  --gr-r: radial-gradient(#c0c6c9, #e9dfe5 100%);
+  --gr-s: radial-gradient(
+    #180614 27%,
+    #2b2137 43%,
+    #4f455c 53%,
+    #c099a0 67%,
+    #e4d2d8 83%,
+    #f4f4f4 100%
+  );
+  --gr-t: radial-gradient(#180614 18%, #e9dfe5 76%);
+  --gr-u: radial-gradient(#180614, #e4d2d8 48%, #a6a5c4 100%);
+  --gr-v: radial-gradient(#180614, #e4d2d8 55%);
+  --gr-w: radial-gradient(#2b2b2b, #474a4d 5%, #95949a 29%, #dddcd6 41%, #d4dcda 59%, #d4dcda 100%);
+  --gr-x: radial-gradient(#2e2930 42%, #4d80e6 100%);
+  --gr-y: radial-gradient(#2e2930 13%, #c099a0 57%, #4d80e6 100%);
+  --gr-z: radial-gradient(#44617b, #a6a5c4 100%);
+  --gr-ja: radial-gradient(#4d80e6, #e9dfe5 100%);
+  --gr-ji: radial-gradient(#9790a4, #d4dcda 55%);
+  --gr-ju: radial-gradient(
+    #010101 27%,
+    #21273d 43%,
+    #495682 59%,
+    #8a9390 67%,
+    #bbb7b1 75%,
+    #fbfaf5 100%
+  );
+  --gr-je: radial-gradient(#010101, #21273d 19%, #5b7e91 42%, #fbfaf5 100%);
+  --gr-jo: radial-gradient(
+    #2b2b2b 27%,
+    #47585c 43%,
+    #80989b 53%,
+    #bed2c3 67%,
+    #bed3ca 83%,
+    #e6eae3 100%
+  );
+  --gr-ka: radial-gradient(#47585c, #c8d5bb 74%);
+  --gr-ki: radial-gradient(#d3dbd9, #9b94a7 100%);
+  --gr-ku: radial-gradient(#180614 18%, #bed2c3 48%, #a6a5c4 76%);
+  --gr-ke: radial-gradient(
+    #16160e 31%,
+    #2c4044 49%,
+    #6c848d 59%,
+    #d4b177 67%,
+    #f5e697 78%,
+    #6c848d 100%
+  );
+  --gr-ko: radial-gradient(
+    #000d19 27%,
+    #152f49 43%,
+    #5f697c 59%,
+    #ad817d 67%,
+    #d6a68e 75%,
+    #ab9491 100%
+  );
+  --gr-sa: radial-gradient(
+    #010101 27%,
+    #21273d 43%,
+    #da2c2c 59%,
+    #8a9390 67%,
+    #bbb7b1 75%,
+    #fbfaf5 100%
+  );
+  --gr-shi: radial-gradient(#44617b, #6a8297 29%, #f7fcfe 51%, #dddcd6 61%, #80989b 100%);
+  --gr-tsu: radial-gradient(#e36639, #e56739 14%, #010101 56%, #bbb7b1 84%, #fbfaf5 100%);
+  --gr-te: radial-gradient(
+    #000b00 21%,
+    #555555 44%,
+    #8f8f79 55%,
+    #f5e697 66%,
+    #d3d3d0 78%,
+    #bfbfbf 99%,
+    #f0f0f0 100%
+  );
+  --gr-to: radial-gradient(#797979, #dcdddd 42%, #ffe56b 58%, #dcdddd 63%, #dcdddd 100%);
+  --gr-ha: radial-gradient(#dcdddd, #dcdddd 12%, #ffe56b 47%, #dcdddd 78%, #797979 100%);
+  --gr-hi: radial-gradient(
+    #4587b3,
+    #ed7176 12%,
+    #9ea3b5 26%,
+    #d4b1ad 34%,
+    #70a8a0 48%,
+    #0f678d 1000%
+  );
+}
